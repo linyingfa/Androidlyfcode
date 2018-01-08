@@ -8,4 +8,9 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+
+    <declare-styleable name="PaddingMarginView">
+        <attr name="backgroundColor" format="color" />
+
+    </declare-styleable>
 </resources>

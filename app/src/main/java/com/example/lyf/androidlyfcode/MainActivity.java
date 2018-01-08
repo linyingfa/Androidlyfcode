@@ -1,6 +1,7 @@
 package com.example.lyf.androidlyfcode;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,6 +11,8 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.TextView;
+
+import com.example.lyf.androidlyfcode.utils.Intents;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
+                Intents.getIntents().Intent(MainActivity.this, ViewStudy.class, null);
             }
         });
     }
