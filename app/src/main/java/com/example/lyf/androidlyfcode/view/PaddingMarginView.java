@@ -103,6 +103,7 @@ public class PaddingMarginView extends View {
         rect.right = width - paddingRight;
         rect.bottom = height - paddingBottom;
         canvas.drawRect(rect, mPaint);
+
     }
 
     private int measureWidth(int measureSpec) {
