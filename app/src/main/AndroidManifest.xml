@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.example.lyf.androidlyfcode">
+    package="com.example.lyf.androidlyfcode">
 
     <application
         android:allowBackup="true"
@@ -16,5 +16,6 @@
         </activity>
         <activity android:name=".ViewStudy" />
         <activity android:name=".BaseViewActivity" />
+        <activity android:name=".view.rectangle.RectangleActivity" />
     </application>
 </manifest>

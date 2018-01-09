@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <com.example.lyf.androidlyfcode.view.rectangle.CusRect
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+
+
+    <com.example.lyf.androidlyfcode.view.rectangle.PieView
+        android:id="@+id/priview"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/colorPrimaryDark"
+        android:visibility="gone" />
+
+
+    <com.example.lyf.androidlyfcode.view.rectangle.PieView2
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/colorPrimary"
+        android:visibility="gone" />
+
+    <com.example.lyf.androidlyfcode.view.rectangle.CanvasOperation
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorAccent"
+        android:visibility="gone" />
+
+
+    <com.example.lyf.androidlyfcode.view.rectangle.CanvasBitmap
+        android:id="@+id/checkView"
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:onClick="onClick" />
+
+</LinearLayout>
