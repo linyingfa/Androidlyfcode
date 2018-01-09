@@ -18,61 +18,66 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
+	static List<String> nameList = new ArrayList<>();
 
+	static {
+		nameList.add("base图形");
+		nameList.add("测量相关");
+	}
 
-    GridView gridview;
-    static List<String> nameList = new ArrayList<>();
+	GridView gridview;
 
-    static {
-        nameList.add("自定义View");
-    }
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		gridview = (GridView) findViewById(R.id.gridview);
+		gridview.setAdapter(new GridViewAdapter(nameList, this));
+		gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+				switch (position) {
+					case 0:
+						Intents.getIntents().Intent(MainActivity.this, BaseViewActivity.class, null);
+						break;
+					case 1:
+						Intents.getIntents().Intent(MainActivity.this, ViewStudy.class, null);
+						break;
+				}
+			}
+		});
+	}
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        gridview = (GridView) findViewById(R.id.gridview);
-        gridview.setAdapter(new GridViewAdapter(nameList, this));
-        gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intents.getIntents().Intent(MainActivity.this, ViewStudy.class, null);
-            }
-        });
-    }
+	public static class GridViewAdapter extends BaseAdapter {
+		List<String> namelist;
+		private Context mContext;
 
+		public GridViewAdapter(List<String> namelist, Context mContext) {
+			this.namelist = namelist;
+			this.mContext = mContext;
+		}
 
-    public static class GridViewAdapter extends BaseAdapter {
+		@Override
+		public int getCount() {
+			return namelist == null ? 0 : namelist.size();
+		}
 
-        List<String> namelist;
-        private Context mContext;
+		@Override
+		public Object getItem(int position) {
+			return namelist.get(position);
+		}
 
-        public GridViewAdapter(List<String> namelist, Context mContext) {
-            this.namelist = namelist;
-            this.mContext = mContext;
-        }
+		@Override
+		public long getItemId(int position) {
+			return position;
+		}
 
-        @Override
-        public int getCount() {
-            return namelist == null ? 0 : namelist.size();
-        }
-
-        @Override
-        public Object getItem(int position) {
-            return namelist.get(position);
-        }
-
-        @Override
-        public long getItemId(int position) {
-            return position;
-        }
-
-        @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
-            View view = LayoutInflater.from(mContext).inflate(R.layout.gridview_item, parent, false);
-            TextView textView = view.findViewById(R.id.item_tv);
-            textView.setText(namelist.get(position));
-            return view;
-        }
-    }
+		@Override
+		public View getView(int position, View convertView, ViewGroup parent) {
+			View view = LayoutInflater.from(mContext).inflate(R.layout.gridview_item, parent, false);
+			TextView textView = view.findViewById(R.id.item_tv);
+			textView.setText(namelist.get(position));
+			return view;
+		}
+	}
 }
