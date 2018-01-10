@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         nameList.add("base图形");
         nameList.add("测量相关");
         nameList.add("绘画矩形");
+        nameList.add("进度条");
     }
 
     GridView gridview;
@@ -47,6 +48,9 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case 2:
                         Intents.getIntents().Intent(MainActivity.this, RectangleActivity.class, null);
+                        break;
+                    case 3:
+                        Intents.getIntents().Intent(MainActivity.this, BlendViewActivity.class, null);
                         break;
                 }
             }
