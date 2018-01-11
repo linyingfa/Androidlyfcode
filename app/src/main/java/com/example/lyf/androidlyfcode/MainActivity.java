@@ -12,6 +12,7 @@ import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.TextView;
 
+import com.example.lyf.androidlyfcode.sonic.SonicTestActivity;
 import com.example.lyf.androidlyfcode.utils.Intents;
 import com.example.lyf.androidlyfcode.view.rectangle.RectangleActivity;
 
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         nameList.add("测量相关");
         nameList.add("绘画矩形");
         nameList.add("进度条");
+        nameList.add("Sonic");
     }
 
     GridView gridview;
@@ -51,6 +53,9 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case 3:
                         Intents.getIntents().Intent(MainActivity.this, BlendViewActivity.class, null);
+                        break;
+                    case 4:
+                        Intents.getIntents().Intent(MainActivity.this, SonicTestActivity.class, null);
                         break;
                 }
             }
