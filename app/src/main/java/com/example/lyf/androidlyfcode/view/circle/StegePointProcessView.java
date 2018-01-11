@@ -273,7 +273,8 @@ public class StegePointProcessView extends View {
 //                + 0.66    该阶段相对于整个进度条的比例   + ((阶段数 - 1) * 0.33)
 //                * max    比例具体数值
 //                = current
-
+        //------------------7-----[X点，就是传进来的进度，求这点对应在7-15之间的位置]------15----------30
+        //设;7-15的距离是y，当x=10,10-7:15-7=x:y,
         if (total >= limit2nd) {
             //current=((x - 15) / (30 -15) * 0.33 + 0.66) *max
             total = ((total - limit2nd) / (maxProcess - limit2nd) * 0.33 + 0.66) * maxProcess;
