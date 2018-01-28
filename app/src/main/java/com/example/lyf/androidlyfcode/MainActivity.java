@@ -1,7 +1,6 @@
 package com.example.lyf.androidlyfcode;
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,6 +11,7 @@ import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.TextView;
 
+import com.example.lyf.androidlyfcode.scroll.ScrollActivity;
 import com.example.lyf.androidlyfcode.sonic.SonicTestActivity;
 import com.example.lyf.androidlyfcode.utils.Intents;
 import com.example.lyf.androidlyfcode.view.rectangle.RectangleActivity;
@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         nameList.add("绘画矩形");
         nameList.add("进度条");
         nameList.add("Sonic");
+        nameList.add("ScrollActivity");
     }
 
     GridView gridview;
@@ -56,6 +57,9 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case 4:
                         Intents.getIntents().Intent(MainActivity.this, SonicTestActivity.class, null);
+                        break;
+                    case 5:
+                        Intents.getIntents().Intent(MainActivity.this, ScrollActivity.class, null);
                         break;
                 }
             }
