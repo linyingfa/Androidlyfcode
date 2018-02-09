@@ -11,6 +11,7 @@ import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.TextView;
 
+import com.example.lyf.androidlyfcode.fragment.FragmentActivity;
 import com.example.lyf.androidlyfcode.scroll.ScrollActivity;
 import com.example.lyf.androidlyfcode.sonic.SonicTestActivity;
 import com.example.lyf.androidlyfcode.utils.Intents;
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         nameList.add("进度条");
         nameList.add("Sonic");
         nameList.add("ScrollActivity");
+        nameList.add("FragmentActivity");
     }
 
     GridView gridview;
@@ -60,6 +62,9 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case 5:
                         Intents.getIntents().Intent(MainActivity.this, ScrollActivity.class, null);
+                        break;
+                    case 6:
+                        Intents.getIntents().Intent(MainActivity.this, FragmentActivity.class, null);
                         break;
                 }
             }

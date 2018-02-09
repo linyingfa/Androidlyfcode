@@ -26,6 +26,7 @@ dependencies {
     })
 
     // rootProject.ext根目录提取
+    compile rootProject.ext.dependencies. supportV4
     compile rootProject.ext.dependencies.appcompatV7
     testCompile rootProject.ext.dependencies.junit
     compile rootProject.ext.dependencies.design

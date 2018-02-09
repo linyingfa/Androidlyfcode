@@ -1,5 +1,6 @@
 package com.example.lyf.androidlyfcode;
 
+import android.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -20,6 +21,7 @@ public class ViewStudy extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_viewstudy);
 
+        Fragment fragment = new Fragment();
         //
         WindowManager manager = getWindowManager();
         DisplayMetrics outMetrics = new DisplayMetrics();

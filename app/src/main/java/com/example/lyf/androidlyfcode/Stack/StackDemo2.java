@@ -11,13 +11,14 @@ public class StackDemo2 {
 
     public static void main(String[] args) {
         Stack<Integer> st = new Stack<Integer>();
-        st.push(new Integer(42));//入栈
+        st.push(new Integer(42));//入栈 将元素压入栈
         st.push(new Integer(62));
 
         //
         if (st.empty()) {
             System.out.println("Stack is empty.");
         } else {
+            //返回栈顶端的元素。
             Integer a = (Integer) st.peek();// 查看栈顶元素
             System.out.println(a);
         }
@@ -33,7 +34,7 @@ public class StackDemo2 {
         if (st.empty()) {
             System.out.println("Stack is empty.");
         } else {
-            Integer a1 = (Integer) st.pop();//出栈
+            Integer a1 = (Integer) st.pop();//出栈  弹出栈顶的元素
             Integer a2 = (Integer) st.pop();
             System.out.println(a1);
             System.out.println(a2);

@@ -20,6 +20,7 @@
         <activity android:name=".BaseViewActivity" />
         <activity android:name=".view.rectangle.RectangleActivity" />
         <activity android:name=".BlendViewActivity" />
+        <activity android:name=".fragment.FragmentActivity"/>
         <activity
             android:name=".sonic.SonicTestActivity"
             android:screenOrientation="portrait" />
