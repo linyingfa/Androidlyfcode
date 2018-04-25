@@ -20,8 +20,14 @@ import com.example.lyf.androidlyfcode.view.rectangle.RectangleActivity;
 import java.util.ArrayList;
 import java.util.List;
 
+
+/**
+ * 司法所发送到发送到发撒的发生的发生撒旦法as发送大是大非
+ */
 public class MainActivity extends AppCompatActivity {
     static List<String> nameList = new ArrayList<>();
+
+    private int a = 0;
 
     static {
         nameList.add("base图形");
