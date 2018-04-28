@@ -40,7 +40,7 @@ public class ScrollActivity extends Activity {
 		mBtnTest.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				//TODO View的scrollTo()、scrollBy()，scrollBy(int x, int y)其实是对scrollTo的包装，移动的是相当位置
+				//TODO View的scrollTo()、scrollBy()，scrollBy(int x, int y)其实是对scrollTo的包装，移动的是相对位置
 				//TODO scrollTo、scrollBy滑动的是View中的内容（而且还是整体滑动），而不是View本身
 				//TODO View的scrollTo、scrollBy方法，相当于是移动滑动控件中的画布Canvas，然后进行重绘，屏幕上也就显示相应的内容
 				mTestView.scrollBy(-1 * 150, -1 * 150);

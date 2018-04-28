@@ -18,43 +18,44 @@ import android.widget.Scroller;
  * 编写一些自定义的滑动控件时，会用到一些api如scrollTo(),scrollBy(),getScrollX(), getScrollY()。
  */
 public class CusTestView3 extends View {
-	private static final String TAG = "TestView";
-	Scroller mScroller;
-	Paint mPaint;
+    private static final String TAG = "TestView";
+    Scroller mScroller;
+    Paint mPaint;
 
-	public CusTestView3(Context context) {
-		this(context, null);
-	}
+    public CusTestView3(Context context) {
+        this(context, null);
+    }
 
-	public CusTestView3(Context context, AttributeSet attrs) {
-		this(context, attrs, 0);
-	}
+    public CusTestView3(Context context, AttributeSet attrs) {
+        this(context, attrs, 0);
+    }
 
-	public CusTestView3(Context context, AttributeSet attrs, int defStyleAttr) {
-		super(context, attrs, defStyleAttr);
-		mPaint = new Paint();
-		mPaint.setAntiAlias(true);
-		mPaint.setColor(Color.RED);
-		mScroller = new Scroller(context);
-	}
+    public CusTestView3(Context context, AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
+        mPaint = new Paint();
+        mPaint.setAntiAlias(true);
+        mPaint.setColor(Color.RED);
+        mScroller = new Scroller(context);
+    }
 
-	@Override
-	protected void onDraw(Canvas canvas) {
-		canvas.drawColor(Color.GRAY);
-		canvas.save();
-		canvas.translate(100, 100);
-		canvas.drawCircle(0, 0, 40.0f, mPaint);
-		canvas.drawCircle(50, 50, 40.0f, mPaint);
-		canvas.restore();
-	}
+    @Override
+    protected void onDraw(Canvas canvas) {
+        canvas.drawColor(Color.GRAY);
+        canvas.save();
+        canvas.translate(100, 100);
+        canvas.drawCircle(0, 0, 40.0f, mPaint);
+        canvas.drawCircle(50, 50, 40.0f, mPaint);
+        canvas.restore();
+    }
 
-	public void startScrollBy(int dx, int dy) {
-		mScroller.forceFinished(true);
-		int startX = getScrollX();
-		int startY = getScrollY();
-		mScroller.startScroll(startX, startY, startX + dx, startY + dy, 1000);
-		invalidate();
-	}
+    public void startScrollBy(int dx, int dy) {
+        mScroller.forceFinished(true);
+        int startX = getScrollX();
+        int startY = getScrollY();
+        //public void startScroll(int startX, int startY, int dx, int dy, int duration)
+        mScroller.startScroll(startX, startY, startX + dx, startY + dy, 1000);
+        invalidate();
+    }
 //	这篇文章的主要内容可以总结如下：
 //
 //	1、View 滑动的基础是 mScrollX 和 mScrollY 两个属性。
@@ -74,24 +75,26 @@ public class CusTestView3 extends View {
 //	8、最重要的一点就是要深刻理解 mScrollX、mScrollY 在 Canvas 坐标中的意义，
 //		要区分手指滑动方向、内容滑动方向和 mScrollX、mScrollY 数值的关系。
 
-	@Override
-	public void computeScroll() {
-		super.computeScroll();
-		// 如果动画正在进行中，则返回 true，否则返回 false。
-		// 我们只需要针对 Scroller 正在运行的状态
-		if (mScroller.computeScrollOffset()) {
-			/**
-			 *
-			 * // 通过获取 Scroller 中 mCurrentX、mCurrentY 的值，直接设置为 mScrollX、mScrollY
-			 // 在实际开发中，mCurrentX、mCurrentY 与 mScrollX、mScrollY 的关系由开发者自己定义
-			 *TODO  Scroller类中最重要的两个方法就是startScroll()和computeScrollOffset()，但是Scroller类只是一个滑动计算辅助类，
-			 *TODO 它的startScroll()和computeScrollOffset()方法中也只是对一些轨迹参数进行设置和计算，
-			 *TODO 真正需要进行滑动还是得通过View的scrollTo()、scrollBy()方法。
-			 */
-			scrollTo(mScroller.getCurrX(), mScroller.getCurrY());
-			if (mScroller.getCurrX() == getScrollX() && mScroller.getCurrY() == getScrollY()) {
-				postInvalidate();
-			}
-		}
-	}
+    @Override
+    public void computeScroll() {
+        super.computeScroll();
+        // 如果动画正在进行中，则返回 true，否则返回 false。
+        // 我们只需要针对 Scroller 正在运行的状态
+        if (mScroller.computeScrollOffset()) {
+            /**
+             *
+             * // 通过获取 Scroller 中 mCurrentX、mCurrentY 的值，直接设置为 mScrollX、mScrollY
+             // 在实际开发中，mCurrentX、mCurrentY 与 mScrollX、mScrollY 的关系由开发者自己定义
+             *TODO  Scroller类中最重要的两个方法就是startScroll()和computeScrollOffset()，但是Scroller类只是一个滑动计算辅助类，
+             *TODO 它的startScroll()和computeScrollOffset()方法中也只是对一些轨迹参数进行设置和计算，
+             *TODO 真正需要进行滑动还是得通过View的scrollTo()、scrollBy()方法。
+             */
+            //mScroller的方法getCurrX//返回当前滚动的偏移量
+            //getScrollX 是View的方法 mScrollX和mScrollY是View类中专门用于记录滑动位置的变量
+            scrollTo(mScroller.getCurrX(), mScroller.getCurrY());
+            if (mScroller.getCurrX() == getScrollX() && mScroller.getCurrY() == getScrollY()) {
+                postInvalidate();
+            }
+        }
+    }
 }

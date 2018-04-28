@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <Button
         android:id="@+id/btn_test"
@@ -18,22 +18,24 @@
         android:layout_centerInParent="true"
         android:background="@color/colorAccent">
 
+
+        <!--scrollBy-->
         <com.example.lyf.androidlyfcode.scroll.CusTestView
             android:id="@+id/testView"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+        <!--animator-->
         <com.example.lyf.androidlyfcode.scroll.CusTestView2
             android:id="@+id/cusTestView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="gone" />
-
+        <!--startScroll-->
         <com.example.lyf.androidlyfcode.scroll.CusTestView3
             android:id="@+id/cusTestView3"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="gone" />
+            android:layout_height="wrap_content" />
 
         <com.example.lyf.androidlyfcode.scroll.MyViewPager
             android:layout_width="match_parent"
@@ -65,4 +67,6 @@
                 android:src="@mipmap/ic_launcher" />
         </com.example.lyf.androidlyfcode.scroll.MyViewPager>
     </RelativeLayout>
+
+
 </RelativeLayout>
