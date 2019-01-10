@@ -9,9 +9,13 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
+import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.lyf.androidlyfcode.Behavior.CusBehaviorActivity;
+import com.example.lyf.androidlyfcode.Measure.MeasureActivity;
 import com.example.lyf.androidlyfcode.fragment.FragmentActivity;
+import com.example.lyf.androidlyfcode.lvrv.RVLVMainActivity;
 import com.example.lyf.androidlyfcode.scroll.ScrollActivity;
 import com.example.lyf.androidlyfcode.sonic.SonicTestActivity;
 import com.example.lyf.androidlyfcode.utils.Intents;
@@ -40,15 +44,18 @@ public class MainActivity extends AppCompatActivity {
         nameList.add("Sonic");
         nameList.add("ScrollActivity");
         nameList.add("FragmentActivity");
+        nameList.add("rvlv");
+        nameList.add("Measure");
+        nameList.add("Behavior");
     }
 
-    GridView gridview;
+    ListView gridview;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        gridview = (GridView) findViewById(R.id.gridview);
+        gridview = (ListView) findViewById(R.id.gridview);
         gridview.setAdapter(new GridViewAdapter(nameList, this));
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -74,6 +81,15 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case 6:
                         Intents.getIntents().Intent(MainActivity.this, FragmentActivity.class, null);
+                        break;
+                    case 7:
+                        Intents.getIntents().Intent(MainActivity.this, RVLVMainActivity.class, null);
+                        break;
+                    case 8:
+                        Intents.getIntents().Intent(MainActivity.this, MeasureActivity.class, null);
+                        break;
+                    case 9:
+                        Intents.getIntents().Intent(MainActivity.this, CusBehaviorActivity.class, null);
                         break;
                 }
             }

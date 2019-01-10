@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Androidlyfcode</string>
+    <string name="CusBehavior">com.example.lyf.androidlyfcode.Behavior.CusBehavior</string>
+
 </resources>

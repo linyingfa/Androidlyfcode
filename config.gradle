@@ -44,7 +44,7 @@ ext {
             logger               : 'com.orhanobut:logger:1.15',
 
             greendao             : 'org.greenrobot:greendao:3.2.0',
-
+            "BRVH"                     : "com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.40",
             // ------------- ButterKnife -------------
             butterknife          : 'com.jakewharton:butterknife:8.4.0',
             butterknifeCompiler  : 'com.jakewharton:butterknife-compiler:8.4.0',

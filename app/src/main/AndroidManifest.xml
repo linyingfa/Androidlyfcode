@@ -21,6 +21,9 @@
         <activity android:name=".view.rectangle.RectangleActivity" />
         <activity android:name=".BlendViewActivity" />
         <activity android:name=".fragment.FragmentActivity"/>
+        <activity android:name=".lvrv.RVLVMainActivity"></activity>
+        <activity android:name=".Measure.MeasureActivity"></activity>
+        <activity android:name=".Behavior.CusBehaviorActivity"></activity>
         <activity
             android:name=".sonic.SonicTestActivity"
             android:screenOrientation="portrait" />
