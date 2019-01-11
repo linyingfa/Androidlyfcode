@@ -28,5 +28,6 @@
             android:name=".sonic.SonicTestActivity"
             android:screenOrientation="portrait" />
         <activity android:name=".scroll.ScrollActivity"/>
+        <activity android:name=".view.line.CusLineActivity"/>
     </application>
 </manifest>

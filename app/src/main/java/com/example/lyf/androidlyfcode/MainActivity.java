@@ -19,6 +19,7 @@ import com.example.lyf.androidlyfcode.lvrv.RVLVMainActivity;
 import com.example.lyf.androidlyfcode.scroll.ScrollActivity;
 import com.example.lyf.androidlyfcode.sonic.SonicTestActivity;
 import com.example.lyf.androidlyfcode.utils.Intents;
+import com.example.lyf.androidlyfcode.view.line.CusLineActivity;
 import com.example.lyf.androidlyfcode.view.rectangle.RectangleActivity;
 
 import java.util.ArrayList;
@@ -47,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
         nameList.add("rvlv");
         nameList.add("Measure");
         nameList.add("Behavior");
+        nameList.add("CusLine");
     }
 
     ListView gridview;
@@ -90,6 +92,9 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case 9:
                         Intents.getIntents().Intent(MainActivity.this, CusBehaviorActivity.class, null);
+                        break;
+                    case 10:
+                        Intents.getIntents().Intent(MainActivity.this, CusLineActivity.class, null);
                         break;
                 }
             }
